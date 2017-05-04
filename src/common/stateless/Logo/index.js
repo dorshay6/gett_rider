@@ -13,7 +13,7 @@ export default class Logo extends Component {
 
 var styles = StyleSheet.create({
   logoImage: {
-    width: 131,
+    width: 151,
     height: 30,
     marginTop: 33
   },

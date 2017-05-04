@@ -42,14 +42,15 @@ export default class Registration extends Component {
 
     const split_you_ride_with = {
       width: 250,
-    	fontFamily: 'HelveticaNeue-Light',
-    	fontSize: 22,
+    	fontFamily: 'HelveticaNeue',
+    	fontSize: 33,
     	letterSpacing: -0.1,
     	textAlign: 'center',
     	color: '#606cd0',
       marginTop: 30,
       alignSelf: 'center',
-      marginBottom: 67,
+      marginBottom: 40,
+      fontWeight: '100'
     }
 
     return (
