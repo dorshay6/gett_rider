@@ -15,7 +15,7 @@ export default class NewRide extends Component {
     drawUnderTabBar: true,
     navBarBackgroundColor: '#4dbce9',
     navBarTextColor: '#ffff00',
-    navBarSubtitleTextColor: '#ff0000',
+    navBarSubtitleTextColor: '#000000',
     navBarButtonColor: '#ffffff',
     statusBarTextColorScheme: 'light'
   };

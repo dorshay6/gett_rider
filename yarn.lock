@@ -2424,7 +2424,7 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
-lodash@4.x.x, lodash@^4.14.0, lodash@^4.16.6, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.x.x, lodash@^4.0.0, lodash@^4.14.0, lodash@^4.16.6, lodash@^4.2.0, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2861,6 +2861,12 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
+prop-types@^15.5.8:
+  version "15.5.8"
+  resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.8.tgz#6b7b2e141083be38c8595aa51fc55775c7199394"
+  dependencies:
+    fbjs "^0.8.9"
+
 prr@~0.0.0:
   version "0.0.0"
   resolved "https://registry.yarnpkg.com/prr/-/prr-0.0.0.tgz#1a84b85908325501411853d0081ee3fa86e2926a"
@@ -2930,6 +2936,10 @@ react-devtools-core@^2.0.8:
     shell-quote "^1.6.1"
     ws "^2.0.3"
 
+react-native-action-button@^2.6.9:
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/react-native-action-button/-/react-native-action-button-2.6.9.tgz#f9609d65ac40aac0ae1c2bd05dc7a8811395d62b"
+
 react-native-google-places-autocomplete@^1.2.12:
   version "1.2.12"
   resolved "https://registry.yarnpkg.com/react-native-google-places-autocomplete/-/react-native-google-places-autocomplete-1.2.12.tgz#714c731be35bfca190239d98cbc7e0d518b38d98"
@@ -2952,6 +2962,14 @@ react-native-snap-carousel@^2.1.2:
   resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-2.1.2.tgz#a266ef26446ca119940ee3b4124f1140b524effb"
   dependencies:
     react-addons-shallow-compare "15.5.0"
+
+react-native-vector-icons@^4.1.0:
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-4.1.0.tgz#816054e85ce7d0a68957b2a4433d2daea91fd821"
+  dependencies:
+    lodash "^4.0.0"
+    prop-types "^15.5.8"
+    yargs "^6.3.0"
 
 react-native@0.43.4:
   version "0.43.4"

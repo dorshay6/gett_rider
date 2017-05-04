@@ -29,10 +29,8 @@ export default class GettTextInput extends Component {
   }
 
   render() {
-    console.log(this.props.pointColor)
     const baseStyle = this.state.focused ? styles.focused : styles.normal;
     const pointStyle = this.props.pointColor ? styles.hasPoint : {};
-    console.log(baseStyle, pointStyle)
     const inputStyle = multipleStyles(baseStyle, pointStyle)
     return (
       <View style={{paddingRight: 16, paddingLeft: 16}} zIndex={this.state.focused ? 1000 : null}>
@@ -41,6 +39,7 @@ export default class GettTextInput extends Component {
           onFocus={ this.onFocus.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onChangeText={ this.onChangeText.bind(this) }
+          keyboardType= { this.props.keyboardType }
           placeholder={this.props.placeholder}
           style={ inputStyle }
           value={ this.props.value || null }
@@ -53,13 +52,7 @@ export default class GettTextInput extends Component {
   }
 }
 
-var styles = StyleSheet.create({
-  main: {
-    flex: 1,
-    backgroundColor: "#f1f1f1",
-    justifyContent: "center",
-    alignItems: "center"
-  },
+var styles = {
   focused: {
     fontFamily: 'HelveticaNeue-Light',
     height: 50,
@@ -72,7 +65,7 @@ var styles = StyleSheet.create({
     shadowOffset: {
       height: 10,
       width: 0
-    }
+    },
   },
   normal: {
     fontFamily: 'HelveticaNeue-Light',
@@ -84,4 +77,4 @@ var styles = StyleSheet.create({
   hasPoint: {
     paddingLeft: 32
   }
-});
+}
