@@ -11,14 +11,11 @@ import {
 import GettAddressInput from '../common/stateless/GettAddressInput';
 import GettTextInput from '../common/stateless/GettTextInput';
 import GettNextButton from '../common/stateless/GettNextButton';
+import Logo from '../common/stateless/Logo';
 
 export default class Registration extends Component {
   static navigatorStyle = {
-    navBarBackgroundColor: '#fbfbfd',
-    navBarTextColor: '#363636',
-    navBarSubtitleTextColor: '#ff0000',
-    navBarButtonColor: '#fbfbfd',
-    statusBarTextColorScheme: 'light'
+    navBarHidden:true
   };
 
   constructor(props) {
@@ -44,13 +41,12 @@ export default class Registration extends Component {
     }
 
     const split_you_ride_with = {
-      width: 223,
-    	height: 21,
-    	fontFamily: 'HelveticaNeue',
-    	fontSize: 18,
+      width: 250,
+    	fontFamily: 'HelveticaNeue-Light',
+    	fontSize: 22,
     	letterSpacing: -0.1,
     	textAlign: 'center',
-    	color: '#000000',
+    	color: '#606cd0',
       marginTop: 30,
       alignSelf: 'center',
       marginBottom: 67,
@@ -58,13 +54,15 @@ export default class Registration extends Component {
 
     return (
       <View style={container}>
+        <Logo />
         <Text style={split_you_ride_with}>
-          Split you ride with other pps
+          Start commuting for less
         </Text>
         <GettTextInput
           keyboardType='numeric'
           returnKeyType='go'
           placeholder="Enter your phone"
+          style={{color: "#606cd0"}}
           />
         <GettNextButton offsetY={200}/>
       </View>

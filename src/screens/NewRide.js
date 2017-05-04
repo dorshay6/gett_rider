@@ -14,14 +14,11 @@ import Carousel from 'react-native-snap-carousel';
 
 import GettAddressInput from '../common/stateless/GettAddressInput';
 import GettTextInput from '../common/stateless/GettTextInput';
+import Logo from '../common/stateless/Logo';
 
 export default class NewRide extends Component {
   static navigatorStyle = {
-    navBarBackgroundColor: '#F7F7F9',
-    navBarTextColor: '#363636',
-    navBarSubtitleTextColor: '#ff0000',
-    navBarButtonColor: '#F7F7F9',
-    statusBarTextColorScheme: 'light'
+    navBarHidden:true
   };
 
   constructor(props) {
@@ -63,8 +60,16 @@ export default class NewRide extends Component {
   }
 
   render() {
+    const container = {
+      flex: 1,
+      alignItems: 'stretch',
+      flexDirection: 'column',
+      backgroundColor:'#fbfbfd',
+    }
+
     return (
-      <View style={{backgroundColor:'#F7F7F9', height: Dimensions.get('window').height}}>
+      <View style={container}>
+        <Logo />
         <GettAddressInput
           navigator={this.props.navigator}
           placeholder="Enter Origion"

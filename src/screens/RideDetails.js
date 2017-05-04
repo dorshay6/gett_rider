@@ -11,6 +11,8 @@ import {
   Animated
 } from 'react-native';
 
+
+import Logo from '../common/stateless/Logo';
 import multipleStyles from 'react-native-multiple-styles'
 
 export default class NewRide extends Component {
@@ -66,9 +68,7 @@ export default class NewRide extends Component {
     return (
       <View>
         <Image source={require('../image/bg@3x.png')} style={styles.backgroundImage} />
-        <View style={styles.centerContent}>
-          <Image source={require('../image/ic-logo@3x.png')} style={styles.logoImage} />
-        </View>
+        <Logo />
         <View>
           <View style={styles.mainBox}>
             <View style={styles.centerContent}>
@@ -125,7 +125,7 @@ var styles = StyleSheet.create({
   },
   mainBox: {
     margin: 16,
-    marginTop: 100,
+    marginTop: 80,
     backgroundColor: "#ffffff",
     borderRadius: 3,
     shadowColor: "#000000",

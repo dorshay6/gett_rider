@@ -31,7 +31,7 @@ export default class GettTextInput extends Component {
   render() {
     const baseStyle = this.state.focused ? styles.focused : styles.normal;
     const pointStyle = this.props.pointColor ? styles.hasPoint : {};
-    const inputStyle = Object.assign({}, baseStyle, pointStyle)
+    const inputStyle = Object.assign({}, baseStyle, pointStyle, this.props.style )
     return (
       <View style={{paddingRight: 16, paddingLeft: 16}} zIndex={this.state.focused ? 1000 : null}>
         {this.props.label ? <Text style={{}} > { this.props.label } </Text> : null}
@@ -73,6 +73,7 @@ var styles = {
     padding: 5,
     backgroundColor: "#ffffff",
     borderRadius: 3,
+    paddingLeft: 19
   },
   hasPoint: {
     paddingLeft: 32
