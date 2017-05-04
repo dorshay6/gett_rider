@@ -29,18 +29,26 @@ export default class NewRide extends Component {
   render() {
     return (
       <View style={{backgroundColor:'#F7F7F9', height: Dimensions.get('window').height}}>
+        <View style={styles.bigCircle}>
+
+        </View>
         <View style={styles.mainBox}>
           <Text style={styles.header}> Looking for another rider </Text>
           <Text style={styles.subtitle}> We will let you know till 16:45 </Text>
           <View style={styles.divider} />
           <View style={styles.dataHolder}>
-            <View style={styles.pointHolder}>
-              <Text style={styles.pointName}>17:00  Pickup</Text>
-              <Text style={styles.pointAddress}>70 Kamryn Estates</Text>
-            </View>
-            <View style={styles.pointHolder}>
-              <Text style={styles.pointName}>17:00  Pickup</Text>
-              <Text style={styles.pointAddress}>70 Kamryn Estates</Text>
+            <View style={{flexDirection: 'row'}}>
+              <Image source={require('../image/ic-pickupdropoff@3x.png')} style={styles.sideIcones} zIndex={100}/>
+              <View>
+                <View style={styles.pointHolder}>
+                  <Text style={styles.pointName}>17:00  Pickup</Text>
+                  <Text style={styles.pointAddress}>70 Kamryn Estates</Text>
+                </View>
+                <View style={styles.pointHolder}>
+                  <Text style={styles.pointName}>17:00  Pickup</Text>
+                  <Text style={styles.pointAddress}>70 Kamryn Estates</Text>
+                </View>
+              </View>
             </View>
           </View>
           <View style={styles.divider} />
@@ -55,10 +63,17 @@ export default class NewRide extends Component {
 }
 
 var styles = StyleSheet.create({
+  bigCircle: {
+    width: 80,
+    height: 80,
+    borderRadius: 40,
+    backgroundColor: "#ffffff",
+    marginTop: 50,
+    marginBottom: -40,
+    zIndex: 10000
+  },
   mainBox: {
     margin: 16,
-    marginTop: 50,
-    fontFamily: 'HelveticaNeue-Light',
     backgroundColor: "#ffffff",
     borderRadius: 3,
     shadowColor: "#000000",
@@ -87,9 +102,14 @@ var styles = StyleSheet.create({
     backgroundColor: "#ebebeb",
     marginTop: 29
   },
+  sideIcones: {
+    width: 16,
+    height: 86,
+    marginTop: 14
+  },
   dataHolder: {
     marginTop: 16,
-    paddingRight: 25,
+    paddingRight: 23,
     paddingLeft: 25,
   },
   pointName: {
@@ -102,7 +122,7 @@ var styles = StyleSheet.create({
     fontFamily: 'HelveticaNeue'
   },
   pointHolder: {
-    margin: 18
+    margin: 14
   },
   bottomContainer: {
     flexDirection: 'row'

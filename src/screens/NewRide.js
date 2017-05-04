@@ -72,7 +72,7 @@ export default class NewRide extends Component {
           onAddressSelect={this.onAddressSelect('Origion').bind(this)}
           />
         <GettAddressInput
-          style={{marginTop: 0}}
+          style={{marginTop: -8}}
           navigator={this.props.navigator}
           placeholder="Enter Destination"
           pointColor="#606cd0"
