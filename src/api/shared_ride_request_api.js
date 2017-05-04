@@ -11,12 +11,13 @@ export default class SharedRideRequestAPI {
   contractor(){
   }
 
-  runRequest ( { uri, requestParams, failureCallback} ) {
+  runRequest ( { uri, requestParams, successCallback, failureCallback} ) {
     const request = fetch(SharedRideRequestAPI.HOST + uri, requestParams)
     request.then(response => response.json())
            .then(response => {
                             console.info('Splitter request success:')
                             console.info(response)
+                            successCallback(response)
                           })
            .catch(e => {
                        console.info('Splitter request failed:')
@@ -39,7 +40,8 @@ export default class SharedRideRequestAPI {
     this.runRequest({uri: SharedRideRequestAPI.POST_SHARED_RIDE_REQUEST, requestParams, failureCallback})
   }
 
-  get( id ){
-    return this.runRequest({uri: SharedRideRequestAPI.GET_SHARED_RIDE_REQUEST.replace('{:rider_phone}', id)})
+  get( {id, successCallback, failureCallback} ){
+    return this.runRequest({uri: SharedRideRequestAPI.GET_SHARED_RIDE_REQUEST.replace('{:rider_phone}', id),
+                            successCallback, failureCallback }})
   }
 }

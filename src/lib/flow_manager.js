@@ -15,17 +15,21 @@ export default class FlowManager {
     }
   }
 
+<<<<<<< HEAD
   async load(){
+=======
+  async getPhoneNumber(){
+>>>>>>> cd03c313fd09870a0a01fb7ccf188c7fda308f99
     try {
       const phone_num = await AsyncStorage.getItem('splitter:phone_num');
       if (phone_num !== null){
         // We have data!!
-        console.log("FlowManager.load: phone number retrieved from local storage")
+        console.log("FlowManager.getPhoneNumber: phone number retrieved from local storage")
         console.log(phone_num);
       }
     } catch (error) {
       // Error retrieving data
-      console.log("FlowManager.load: phone number retrieval error")
+      console.log("FlowManager.getPhoneNumber: phone number retrieval error")
       console.log(phone_num);
     }
 
@@ -41,5 +45,15 @@ export default class FlowManager {
 
   createSharedRide( ride ){
     this.SharedRideRequestAPI.create({sharedRideRequest:ride})
+  }
+
+  getRiderRides({phuneNum, successCallback, failureCallback}){
+      this.SharedRideRequestAPI.get({id:phuneNum, successCallback, failureCallback})
+  }
+
+  getRiderRidesForever({phuneNum, successCallback, failureCallback}){
+    setInterval(function() {
+      this.SharedRideRequestAPI.get({id:phuneNum, successCallback, failureCallback})
+    }, 1000);
   }
 }
