@@ -21,7 +21,6 @@ export default class GettNextButton extends Component {
     const iconContent = <Text style={iconStyle}>&rarr;</Text>
     return (<ActionButton
       buttonColor="#606cd0"
-      onPress={() => { console.log("hi")}}
       icon={iconContent}
       {...this.props}
     >

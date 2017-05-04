@@ -12,6 +12,7 @@ import GettAddressInput from '../common/stateless/GettAddressInput';
 import GettTextInput from '../common/stateless/GettTextInput';
 import GettNextButton from '../common/stateless/GettNextButton';
 import Logo from '../common/stateless/Logo';
+import FlowManager from '../lib/flow_manager'
 
 export default class Registration extends Component {
   static navigatorStyle = {
@@ -53,6 +54,20 @@ export default class Registration extends Component {
       fontWeight: '100'
     }
 
+    // <GettNextButton offsetY={200} onPress={() => (new FlowManager()).createSharedRide({
+    //         rider: "1234",
+    //         origin:{
+    //           lat: 34,
+    //           lng: 32
+    //         },
+    //         destination:{
+    //           lat: 23,
+    //           lng: 11
+    //         },
+    //         request_time_start: "2017-04-05T15:04:05Z",
+    //         request_time_end:"2006-04-05T16:04:05Z"
+    //       }) }/>
+    
     return (
       <View style={container}>
         <Logo />
@@ -66,6 +81,7 @@ export default class Registration extends Component {
           style={{color: "#606cd0"}}
           />
         <GettNextButton offsetY={200}/>
+
       </View>
     );
   }
