@@ -1425,7 +1425,7 @@ fbjs-scripts@^0.7.0:
     semver "^5.1.0"
     through2 "^2.0.0"
 
-fbjs@^0.8.9, fbjs@~0.8.9:
+fbjs@^0.8.4, fbjs@^0.8.9, fbjs@~0.8.9:
   version "0.8.12"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.12.tgz#10b5d92f76d45575fd63a217d4ea02bea2f8ed04"
   dependencies:
@@ -2908,6 +2908,13 @@ raw-body@~2.1.2:
     iconv-lite "0.4.13"
     unpipe "1.0.0"
 
+react-addons-shallow-compare@15.5.0:
+  version "15.5.0"
+  resolved "https://registry.yarnpkg.com/react-addons-shallow-compare/-/react-addons-shallow-compare-15.5.0.tgz#4d95c68a5537ccb75f395169b64db1745617fab5"
+  dependencies:
+    fbjs "^0.8.4"
+    object-assign "^4.1.0"
+
 react-clone-referenced-element@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/react-clone-referenced-element/-/react-clone-referenced-element-1.0.1.tgz#2bba8c69404c5e4a944398600bcc4c941f860682"
@@ -2935,6 +2942,12 @@ react-native-navigation@^1.1.1:
   resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.42.tgz#f630ac930240b06a7f50cbf84ccd71d04f34e1d2"
   dependencies:
     lodash "4.x.x"
+
+react-native-snap-carousel@^2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-snap-carousel/-/react-native-snap-carousel-2.1.2.tgz#a266ef26446ca119940ee3b4124f1140b524effb"
+  dependencies:
+    react-addons-shallow-compare "15.5.0"
 
 react-native@0.43.4:
   version "0.43.4"

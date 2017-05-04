@@ -63,10 +63,10 @@ var styles = StyleSheet.create({
     backgroundColor: "#ffffff",
     borderRadius: 3,
     shadowColor: "#000000",
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
+    shadowOpacity: 0.1,
+    shadowRadius: 16,
     shadowOffset: {
-      height: 5,
+      height: 10,
       width: 0
     }
   },

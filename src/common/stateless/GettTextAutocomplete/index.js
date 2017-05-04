@@ -75,12 +75,12 @@ export default class GettAddressInput extends Component {
 
 var styles = StyleSheet.create({
   box: {
-    height: 50,
     padding: 10,
     borderRadius: 3,
-    borderTopColor: '#000000',
-    borderTopWidth: 1,
+    borderBottomColor: '#eaeaea',
+    borderBottomWidth: 1,
   },
   text: {
+    color: '#606cd0'
   }
 });
