@@ -19,6 +19,9 @@ export default class GettAddressInput extends Component {
 
   onAddressSelect(value) {
     this.setState({AddressData: value, options: []})
+    if(this.props.onAddressSelect) {
+      this.props.onAddressSelect(value)
+    }
   }
 
   getValue() {
@@ -47,12 +50,14 @@ export default class GettAddressInput extends Component {
     console.log(this.state.options)
     return (
       <GettTextAutocomplete
+        style={this.props.style}
         onChangeText={this.onChangeText.bind(this)}
         onSelect={this.onAddressSelect.bind(this)}
         placeholder={this.props.placeholder}
         value={ this.getValue() }
         label={this.props.label}
         options={this.state.options}
+        pointColor={this.props.pointColor}
       />
     );
   }

@@ -18,7 +18,14 @@ Navigation.startTabBasedApp({
       screen: 'app.NewRide', // this is a registered name for a screen
       // icon: require('../img/one.png'),
       // selectedIcon: require('../img/one_selected.png'), // iOS only
-      title: 'Find a match'
+      title: 'Gett On'
+    },
+    {
+      label: 'RideDetails',
+      screen: 'app.RideDetails',
+      // icon: require('../img/two.png'),
+      // selectedIcon: require('../img/two_selected.png'), // iOS only
+      title: 'RideDetails'
     },
     {
       label: 'My Rides',

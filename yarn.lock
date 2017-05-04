@@ -2937,6 +2937,10 @@ react-native-google-places-autocomplete@^1.2.12:
     lodash.debounce "^4.0.8"
     qs "^5.2.0"
 
+react-native-multiple-styles@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/react-native-multiple-styles/-/react-native-multiple-styles-1.0.4.tgz#1f58d8c0edcf74d111d9dfb05869fb6f465915c6"
+
 react-native-navigation@^1.1.1:
   version "1.1.42"
   resolved "https://registry.yarnpkg.com/react-native-navigation/-/react-native-navigation-1.1.42.tgz#f630ac930240b06a7f50cbf84ccd71d04f34e1d2"

@@ -12,6 +12,7 @@
     "react": "16.0.0-alpha.6",
     "react-native": "0.43.4",
     "react-native-google-places-autocomplete": "^1.2.12",
+    "react-native-multiple-styles": "^1.0.4",
     "react-native-navigation": "^1.1.1",
     "react-native-snap-carousel": "^2.1.2"
   },

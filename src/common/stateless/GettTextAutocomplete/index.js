@@ -40,18 +40,19 @@ export default class GettAddressInput extends Component {
   render() {
     const options = this.props.options || []
     return (
-      <View>
+      <View style={this.props.style}>
         <GettTextInput
           onFocus={ this.onFocus.bind(this) }
           placeholder={ this.props.value ||  this.props.placeholder }
           onChangeText={ this.onChangeText.bind(this) }
           value={ this.state.focused ?  null : this.props.value }
           label={this.props.label}
+          pointColor={this.props.pointColor}
         />
       {
         options.length > 0 ?
           (
-            <View style={{padding: 10, paddingRight: 30, paddingLeft: 30}}>
+            <View style={{paddingRight: 16, paddingLeft: 16}}>
               {
                 options.map((option) =>  {
                   return (
@@ -81,6 +82,6 @@ var styles = StyleSheet.create({
     borderBottomWidth: 1,
   },
   text: {
-    color: '#606cd0'
+    color: '#505050'
   }
 });

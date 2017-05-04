@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import { TextInput, View, Text,StyleSheet } from 'react-native';
+import multipleStyles from 'react-native-multiple-styles'
 
 export default class GettTextInput extends Component {
   constructor(props) {
@@ -28,23 +29,25 @@ export default class GettTextInput extends Component {
   }
 
   render() {
+    console.log(this.props.pointColor)
+    const baseStyle = this.state.focused ? styles.focused : styles.normal;
+    const pointStyle = this.props.pointColor ? styles.hasPoint : {};
+    console.log(baseStyle, pointStyle)
+    const inputStyle = multipleStyles(baseStyle, pointStyle)
     return (
-      <View style={{padding: 10, paddingRight: 30, paddingLeft: 30}}>
-        <Text
-          style={{}}
-        >
-          { this.props.label || '' }
-        </Text>
+      <View style={{paddingRight: 16, paddingLeft: 16}} zIndex={this.state.focused ? 1000 : null}>
+        {this.props.label ? <Text style={{}} > { this.props.label } </Text> : null}
         <TextInput
           onFocus={ this.onFocus.bind(this) }
           onBlur={ this.onBlur.bind(this) }
           onChangeText={ this.onChangeText.bind(this) }
           placeholder={this.props.placeholder}
-          style={ this.state.focused ? styles.focused : styles.normal}
+          style={ inputStyle }
           value={ this.props.value || null }
           shadowColor="#000"
           placeholderTextColor="#919191"
           />
+        <View style={{backgroundColor: this.props.pointColor, width: 10, height: 10, borderRadius: 5, marginTop: -30, marginLeft: 10, marginBottom: 30}}/>
       </View>
       )
   }
@@ -58,6 +61,7 @@ var styles = StyleSheet.create({
     alignItems: "center"
   },
   focused: {
+    fontFamily: 'HelveticaNeue-Light',
     height: 50,
     padding: 5,
     backgroundColor: "#ffffff",
@@ -71,9 +75,13 @@ var styles = StyleSheet.create({
     }
   },
   normal: {
+    fontFamily: 'HelveticaNeue-Light',
     height: 50,
     padding: 5,
     backgroundColor: "#ffffff",
     borderRadius: 3,
+  },
+  hasPoint: {
+    paddingLeft: 32
   }
 });
