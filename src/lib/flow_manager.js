@@ -5,19 +5,19 @@ export default class FlowManager {
     this.SharedRideRequestAPI = new SharedRideRequestAPI()
   }
 
-  saveInStore({key, val, successMsg, failureMsg}){
+  async saveInStore({key, val, successMsg, failureMsg}){
     console.log({key:val});
     try {
-      AsyncStorage.setItem(key, val);
+      await AsyncStorage.setItem(key, val);
       console.log(successMsg)
     } catch (error) {
       console.log(FailureMsg)
     }
   }
 
-  load(){
+  async load(){
     try {
-      const phone_num = AsyncStorage.getItem('splitter:phone_num');
+      const phone_num = await AsyncStorage.getItem('splitter:phone_num');
       if (phone_num !== null){
         // We have data!!
         console.log("FlowManager.load: phone number retrieved from local storage")

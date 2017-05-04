@@ -17,7 +17,8 @@ import multipleStyles from 'react-native-multiple-styles'
 
 export default class NewRide extends Component {
   static navigatorStyle = {
-    navBarHidden:true
+    navBarHidden:true,
+    tabBarHidden: false
   };
 
   constructor(props) {
@@ -67,7 +68,7 @@ export default class NewRide extends Component {
   render() {
     return (
       <View>
-        <Image source={require('../image/bg@3x.png')} style={styles.backgroundImage} />
+        <Image source={require('../image/bg@3x.png')} style={styles.backgroundImage}>
         <Logo />
         <View>
           <View style={styles.mainBox}>
@@ -101,6 +102,7 @@ export default class NewRide extends Component {
             </View>
           </View>
         </View>
+      </Image>
       </View>
     );
   }

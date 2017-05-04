@@ -7,7 +7,8 @@ import {
   StyleSheet,
   TextInput,
   Dimensions,
-  Image
+  Image,
+  AsyncStorage
 } from 'react-native';
 
 import Carousel from 'react-native-snap-carousel';
@@ -15,10 +16,12 @@ import Carousel from 'react-native-snap-carousel';
 import GettAddressInput from '../common/stateless/GettAddressInput';
 import GettTextInput from '../common/stateless/GettTextInput';
 import Logo from '../common/stateless/Logo';
+import GettNextButton from '../common/stateless/GettNextButton';
 
 export default class NewRide extends Component {
   static navigatorStyle = {
-    navBarHidden:true
+    navBarHidden:true,
+    tabBarHidden: false
   };
 
   constructor(props) {
@@ -59,6 +62,15 @@ export default class NewRide extends Component {
     }
   }
 
+  async logout() {
+    await AsyncStorage.removeItem('@splitter:phone_num')
+    this.props.navigator.push({ screen: 'app.Registration' })
+  }
+
+  onSubmit() {
+    this.props.navigator.push({ screen: 'app.RideDetails' })
+  }
+
   render() {
     const container = {
       flex: 1,
@@ -69,7 +81,9 @@ export default class NewRide extends Component {
 
     return (
       <View style={container}>
-        <Logo />
+        <TouchableOpacity onPress={this.logout.bind(this)}>
+          <Logo />
+        </TouchableOpacity>
         <GettAddressInput
           navigator={this.props.navigator}
           placeholder="Enter Origion"
@@ -129,6 +143,7 @@ export default class NewRide extends Component {
                 </Text>
               </View>
             </View>
+            <GettNextButton offsetY={300} onPress={this.onSubmit.bind(this)}/>
           </View>
         ) : null}
       </View>

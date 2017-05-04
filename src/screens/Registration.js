@@ -5,7 +5,8 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  TextInput
+  TextInput,
+  AsyncStorage
 } from 'react-native';
 
 import GettAddressInput from '../common/stateless/GettAddressInput';
@@ -16,13 +17,14 @@ import FlowManager from '../lib/flow_manager'
 
 export default class Registration extends Component {
   static navigatorStyle = {
-    navBarHidden:true
+    navBarHidden:true,
+    tabBarHidden: true
   };
 
   constructor(props) {
     super(props);
     this.buttonsCounter = 0;
-    this.state = {};
+    this.state = {userPhone: ''};
   }
 
   onSelectAddress(addressType) {
@@ -31,6 +33,15 @@ export default class Registration extends Component {
       newState[`${addressType}Data`] = value
       this.setState(newState)
     }
+  }
+
+  onChangeText(newText) {
+    this.setState({ userPhone: newText})
+  }
+
+  async onSubmit() {
+    await AsyncStorage.setItem('@splitter:phone_num', this.state.userPhone)
+    this.props.navigator.push({ screen: 'app.NewRide' })
   }
 
   render() {
@@ -54,20 +65,6 @@ export default class Registration extends Component {
       fontWeight: '100'
     }
 
-    // <GettNextButton offsetY={200} onPress={() => (new FlowManager()).createSharedRide({
-    //         rider: "1234",
-    //         origin:{
-    //           lat: 34,
-    //           lng: 32
-    //         },
-    //         destination:{
-    //           lat: 23,
-    //           lng: 11
-    //         },
-    //         request_time_start: "2017-04-05T15:04:05Z",
-    //         request_time_end:"2006-04-05T16:04:05Z"
-    //       }) }/>
-    
     return (
       <View style={container}>
         <Logo />
@@ -79,8 +76,9 @@ export default class Registration extends Component {
           returnKeyType='go'
           placeholder="Enter your phone"
           style={{color: "#606cd0"}}
+          onChangeText={this.onChangeText.bind(this)}
           />
-        <GettNextButton offsetY={200}/>
+        <GettNextButton offsetY={200} onPress={this.onSubmit.bind(this)}/>
 
       </View>
     );
