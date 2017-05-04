@@ -15,11 +15,7 @@ export default class FlowManager {
     }
   }
 
-<<<<<<< HEAD
-  async load(){
-=======
   async getPhoneNumber(){
->>>>>>> cd03c313fd09870a0a01fb7ccf188c7fda308f99
     try {
       const phone_num = await AsyncStorage.getItem('splitter:phone_num');
       if (phone_num !== null){
