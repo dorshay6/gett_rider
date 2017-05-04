@@ -2,6 +2,7 @@ import { Navigation } from 'react-native-navigation';
 
 import NewRide from './NewRide.js';
 import MyRides from './MyRides.js';
+import Registration from './Registration.js';
 // import SecondTabScreen from './SecondTabScreen';
 // import PushedScreen from './PushedScreen';
 
@@ -9,4 +10,5 @@ import MyRides from './MyRides.js';
 export function registerScreens() {
   Navigation.registerComponent('app.NewRide', () => NewRide);
   Navigation.registerComponent('app.MyRides', () => MyRides);
+  Navigation.registerComponent('app.Registration', () => Registration);
 }

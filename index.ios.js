@@ -14,18 +14,18 @@ registerScreens(); // this is where you register all of your app's screens
 Navigation.startTabBasedApp({
   tabs: [
     {
-      label: 'New Ride',
-      screen: 'app.NewRide', // this is a registered name for a screen
+      label: 'Registration',
+      screen: 'app.Registration', // this is a registered name for a screen
       // icon: require('../img/one.png'),
       // selectedIcon: require('../img/one_selected.png'), // iOS only
-      title: 'Find a match'
+      title: 'Gett On'
     },
     {
-      label: 'My Rides',
-      screen: 'app.MyRides',
+      label: 'New Rides',
+      screen: 'app.NewRide',
       // icon: require('../img/two.png'),
       // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'My Rides'
+      title: 'New Rides'
     }
   ]
 });
