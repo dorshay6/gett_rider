@@ -52,7 +52,8 @@ export default class Registration extends Component {
     	textAlign: 'center',
     	color: '#000000',
       marginTop: 30,
-      alignSelf: 'center'
+      alignSelf: 'center',
+      marginBottom: 67,
     }
 
     return (
@@ -61,7 +62,6 @@ export default class Registration extends Component {
           Split you ride with other pps
         </Text>
         <GettTextInput
-          style={{marginTop:60}}
           keyboardType='numeric'
           returnKeyType='go'
           placeholder="Enter your phone"
