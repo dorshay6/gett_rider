@@ -21,11 +21,11 @@ Navigation.startTabBasedApp({
       title: 'Find a match'
     },
     {
-      label: 'Profile',
-      screen: 'app.NewRide',
+      label: 'My Rides',
+      screen: 'app.MyRides',
       // icon: require('../img/two.png'),
       // selectedIcon: require('../img/two_selected.png'), // iOS only
-      title: 'Profile'
+      title: 'My Rides'
     }
   ]
 });

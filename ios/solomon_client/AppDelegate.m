@@ -43,9 +43,7 @@
    self.window.rootViewController = rootViewController;
    [self.window makeKeyAndVisible];
    */
-  
-  [GMSPlacesClient provideAPIKey:@"AIzaSyA_V86HKPVfWuTKz2OtOi5E4Lo5FWVYNgE"];
-  [GMSServices provideAPIKey:@"AIzaSyA_V86HKPVfWuTKz2OtOi5E4Lo5FWVYNgE"];
+
   
   return YES;
 }

@@ -5,20 +5,18 @@ import {
   ScrollView,
   TouchableOpacity,
   StyleSheet,
-  Alert
+  TextInput
 } from 'react-native';
 
-import GoogleMapsAutoComplete from '../common/stateless/GoogleMapsAutoComplete';
-const homePlace = {description: 'Home', geometry: { location: { lat: 48.8152937, lng: 2.4597668 } }};
-const workPlace = {description: 'Work', geometry: { location: { lat: 48.8496818, lng: 2.2940881 } }};
+import GettAddressInput from '../common/stateless/GettAddressInput';
+import GettTextInput from '../common/stateless/GettTextInput';
 
 export default class NewRide extends Component {
-  static navigatorStyle: {
-    drawUnderTabBar: true,
-    navBarBackgroundColor: '#4dbce9',
-    navBarTextColor: '#ffff00',
+  static navigatorStyle = {
+    navBarBackgroundColor: '#fbfbfd',
+    navBarTextColor: '#363636',
     navBarSubtitleTextColor: '#ff0000',
-    navBarButtonColor: '#ffffff',
+    navBarButtonColor: '#fbfbfd',
     statusBarTextColorScheme: 'light'
   };
 
@@ -29,29 +27,31 @@ export default class NewRide extends Component {
   }
 
   onSelectAddress(addressType) {
-    return () => {
-      this.setState({ originData: addressType })
+    return (value) => {
+      let newState = {}
+      newState[`${addressType}Data`] = value
+      this.setState(newState)
     }
   }
 
   render() {
     return (
-      <GoogleMapsAutoComplete onSelect={this.onSelectAddress('origin').bind(this)} />
+      <View style={{backgroundColor:'#fbfbfd'}}>
+        <GettAddressInput
+          navigator={this.props.navigator}
+          placeholder="Enter Origion"
+          />
+        <GettAddressInput
+          navigator={this.props.navigator}
+          placeholder="Enter Destination"
+          />
+        <GettTextInput
+          placeholder="Ride Time"
+          />
+        <GettTextInput
+          placeholder="Number of passengers"
+          />
+      </View>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: 'white'
-  },
-  button: {
-    textAlign: 'center',
-    fontSize: 18,
-    marginBottom: 10,
-    marginTop:10,
-    color: 'blue'
-  }
-});
