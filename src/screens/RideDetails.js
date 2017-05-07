@@ -26,6 +26,10 @@ export default class NewRide extends Component {
     this.state = {
       fadeAnim: new Animated.Value(1),
     }
+
+    setTimeout(() => {
+      this.setState({ found: true })
+    }, 1000 * 60)
   }
 
   componentDidMount() {
@@ -73,11 +77,16 @@ export default class NewRide extends Component {
         <View>
           <View style={styles.mainBox}>
             <View style={styles.centerContent}>
+              {this.state.found?
+              <Image source={require('../image/ic-tick@3x.png')} style={{ width: 30, height: 20, resizeMode: 'contain',margin: 25 }} />:
               <Animated.View style={this.beatingOrange()}>
 
-              </Animated.View>
+              </Animated.View>}
             </View>
-            <Text style={styles.header}> Looking for another rider </Text>
+            {this.state.found?
+              <Text style={styles.headerFound}> Be ready for your pickup </Text> :
+              <Text style={styles.header}> Looking for another rider </Text>
+            }
             <Text style={styles.subtitle}> We will let you know till 16:45 </Text>
             <View style={styles.divider} />
             <View style={styles.dataHolder}>
@@ -141,6 +150,13 @@ var styles = StyleSheet.create({
   header : {
     fontSize: 20,
     color: "#606cd0",
+    textAlign: 'center',
+    marginTop: 16,
+    zIndex: 10,
+  },
+  headerFound : {
+    fontSize: 20,
+    color: "#fbb822",
     textAlign: 'center',
     marginTop: 16,
     zIndex: 10,

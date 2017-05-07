@@ -17,7 +17,7 @@ export default class FlowManager {
 
   async getPhoneNumber(){
     try {
-      const phone_num = await AsyncStorage.getItem('splitter:phone_num');
+      const phone_num = await AsyncStorage.getItem('@splitter:phone_num');
       if (phone_num !== null){
         // We have data!!
         console.log("FlowManager.getPhoneNumber: phone number retrieved from local storage")

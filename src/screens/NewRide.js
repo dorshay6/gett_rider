@@ -30,23 +30,35 @@ export default class NewRide extends Component {
     this.state = {
       times: [
         {
-          label: '12:30',
+          label: '19:30',
           fire: false
         },
         {
-          label: '13:30',
+          label: '20:30',
           fire: true
         },
         {
-          label: '14:30',
+          label: '21:30',
           fire: true
         },
         {
-          label: '15:30',
+          label: '22:30',
           fire: false
         },
         {
-          label: '16:30',
+          label: '23:30',
+          fire: false
+        },
+        {
+          label: '00:30',
+          fire: false
+        },
+        {
+          label: '01:30',
+          fire: false
+        },
+        {
+          label: '02:30',
           fire: false
         },
       ]

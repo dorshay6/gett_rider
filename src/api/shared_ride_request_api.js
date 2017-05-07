@@ -42,6 +42,6 @@ export default class SharedRideRequestAPI {
 
   get( {id, successCallback, failureCallback} ){
     return this.runRequest({uri: SharedRideRequestAPI.GET_SHARED_RIDE_REQUEST.replace('{:rider_phone}', id),
-                            successCallback, failureCallback }})
+                            successCallback, failureCallback })
   }
 }
